@@ -1,18 +1,18 @@
 const express = require('express');
-const connectDB = require('./DB/Connection')
+// const connectDB = require('./DB/Connection')
 const app = express();
 
-connectDB();
+// connectDB();
 
 // app.use(express.static('public'));
 
 app.use(express.json({ extended:false }));
-app.use('/api/userModel', require('./API/User'));
+// app.use('/api/userModel', require('./API/User'));
 const Port = process.env.Port || 3000;
 
 
 app.get('/', function (req, res) {
-  res.send('Hello World!?!')
+  res.send('Hello World -- Mongo is here!')
 })
 
 app.listen(Port,() => console.log("Server started"));
