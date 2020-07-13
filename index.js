@@ -1,10 +1,12 @@
-const cool = require('cool-acsii-faces');
 const express = require('express');
 // const connectDB = require('./DB/Connection')
 const app = express();
 const PORT = process.env.Port || 3000;
 
 // connectDB();
+
+console.log( process.env.DATABASE_URL )
+// console.log( ENV['DATABASE_URL'] )
 
 // app.use(express.static('public'));
 
@@ -14,9 +16,7 @@ app.use(express.json({ extended:false }));
 
 
 app.get('/', function (req, res) {
-  res.send('Hello World -- Mongo is here!')
+  res.send('Hello World - .O*')
 })
-
-app.get('/cool', (req, res) => res.send(cool()));
 
 app.listen(PORT, () => console.log("Server started"));
