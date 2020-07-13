@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-//const config = require('../config');
+const config = require('../config');
 
-// console.log("DEBUG: " + $ )
+// console.log("DEBUG: ")
 
 const URI = `mongodb+srv://${config.dbUser}:${config.dbPass}@cluster0.uvtjq.mongodb.net/${config.dbName}?retryWrites=true&w=majority`;
 
