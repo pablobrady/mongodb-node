@@ -1,17 +1,12 @@
 const express = require('express');
-// const connectDB = require('./DB/Connection')
+const connectDB = require('./DB/Connection')
 const app = express();
 const PORT = process.env.Port || 3000;
 
-// connectDB();
-
-console.log( process.env.DATABASE_URL )
-// console.log( ENV['DATABASE_URL'] )
-
-// app.use(express.static('public'));
+connectDB();
 
 app.use(express.json({ extended:false }));
-// app.use('/api/userModel', require('./API/User'));
+app.use('/api/userModel', require('./API/User'));
 
 
 
