@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
-const URI = process.env.DATABASE_URL;
+const URI = process.env.DATABASE_URL || null;
+if( !URI ) {
+  console.error("Error: A database was not specified."); 
+  return;
+}
 
 const connectDB = async () => {
   await mongoose.connect(URI, { 
